@@ -1,6 +1,6 @@
 
 # Direct Carrier Billing by DOCOMO Digital
-![Swift Version](https://img.shields.io/badge/Swift-4.2-F16D39.svg?style=flat)
+![Swift Version](https://img.shields.io/badge/Swift-5.1.3-F16D39.svg?style=flat)
 ![Platform](https://img.shields.io/badge/Platform-iOS-green.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
