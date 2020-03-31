@@ -58,11 +58,11 @@ Please make sure the two frameworks are linked as seen in the image.
 To use Direct Carrier Billing by Docomo Digital, use the following code.
 ```swift
 let client = DCBApiClient(baseDomain:"<FINGERPRINT_DOMAIN>",
-confInfoDomain: "<BASIC_DOMAIN>",
-                                                        apikey: "<YOUR_APIKEY>",
-                                                        catalog: "<YOUR_CATALOG>",
-                                                        country: "<YOUR_COUNTRY>",
-                                                        namespace: "<YOUR_NAMESPACE>")
+                          confInfoDomain: "<BASIC_DOMAIN>",
+                          apikey: "<YOUR_APIKEY>",
+                          catalog: "<YOUR_CATALOG>",
+                          country: "<YOUR_COUNTRY>",
+                          namespace: "<YOUR_NAMESPACE>")
 
 DCBUserManager(client: client).check(isActive: false) { date in
     if let dcbUser = DCBUserManager.dcbUser {
