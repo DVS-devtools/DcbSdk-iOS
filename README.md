@@ -1,6 +1,6 @@
 
 # Direct Carrier Billing by DOCOMO Digital
-![Swift Version](https://img.shields.io/badge/Swift-4.2-F16D39.svg?style=flat)
+![Swift Version](https://img.shields.io/badge/Swift-5.1.3-F16D39.svg?style=flat)
 ![Platform](https://img.shields.io/badge/Platform-iOS-green.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
@@ -58,11 +58,11 @@ Please make sure the two frameworks are linked as seen in the image.
 To use Direct Carrier Billing by Docomo Digital, use the following code.
 ```swift
 let client = DCBApiClient(baseDomain:"<FINGERPRINT_DOMAIN>",
-confInfoDomain: "<BASIC_DOMAIN>",
-                                                        apikey: "<YOUR_APIKEY>",
-                                                        catalog: "<YOUR_CATALOG>",
-                                                        country: "<YOUR_COUNTRY>",
-                                                        namespace: "<YOUR_NAMESPACE>")
+                          confInfoDomain: "<BASIC_DOMAIN>",
+                          apikey: "<YOUR_APIKEY>",
+                          catalog: "<YOUR_CATALOG>",
+                          country: "<YOUR_COUNTRY>",
+                          namespace: "<YOUR_NAMESPACE>")
 
 DCBUserManager(client: client).check(isActive: false) { date in
     if let dcbUser = DCBUserManager.dcbUser {
