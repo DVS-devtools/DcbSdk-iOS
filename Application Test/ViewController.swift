@@ -12,23 +12,21 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var logTextView: UITextView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupLogging()
-        
+
         DCBUserManager(client: Credential.dcbClient, loggingIsEnabled: Credential.logging).checkFlowDCB(isActive: false) { date in
             if let _ = DCBUserManager.dcbUser {
                 print("User Docomo Digital")
                 if let date = date {
                     print("User is subscribed in date \(date)")
-                }
-                else {
+                } else {
                     print("User expired, not subscribed. User must pay again to access the product")
                 }
-            }
-            else {
+            } else {
                 print("Normal user discover the app from AppStore")
             }
         }
@@ -42,9 +40,9 @@ extension Notification.Name {
 extension ViewController {
     func setupLogging() {
         NotificationCenter.default.addObserver(self, selector: #selector(loggingData(_:)), name: .dcbLogging, object: nil)
-        
+
         logTextView.insertText("DCB FLOW\n")
-        
+
         let _: DCBUserManagerCheckCompletion = { date in
             guard let date = date else {
                 self.logTextView.insertText("\n\nDCB FLOW FINISHED WITHOUT EXPIRATION TIME")
@@ -53,12 +51,12 @@ extension ViewController {
             self.logTextView.insertText("DCB FLOW FINISHED WITHOUT EXPIRATION TIME WITH DATE: \(date)")
         }
     }
-    
+
     @objc func loggingData(_ notification: Notification) {
         guard let userInfo = notification.userInfo,
             let message = userInfo["message"] as? String
-            else { return }
-        
+        else { return }
+
         DispatchQueue.main.async {
             self.logTextView.insertText(message)
         }
