@@ -12,24 +12,18 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var logTextView: UITextView!
-
+    internal var dcbCompletion: DCBUserManagerCheckCompletion?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupLogging()
 
-        DCBUserManager(client: Credential.dcbClient, loggingIsEnabled: Credential.logging).checkFlowDCB(isActive: false) { date in
-            if let _ = DCBUserManager.dcbUser {
-                print("User Docomo Digital")
-                if let date = date {
-                    print("User is subscribed in date \(date)")
-                } else {
-                    print("User expired, not subscribed. User must pay again to access the product")
-                }
-            } else {
-                print("Normal user discover the app from AppStore")
-            }
+        guard let dcbCompletion = dcbCompletion else {
+            print("the callback is nil. Please, assign it")
+            return
         }
+
+        DCBUserManager(client: Credential.dcbClient, loggingIsEnabled: Credential.logging).checkFlowDCB(isActive: false, completion: dcbCompletion)
     }
 }
 
@@ -43,12 +37,19 @@ extension ViewController {
 
         logTextView.insertText("DCB FLOW\n")
 
-        let _: DCBUserManagerCheckCompletion = { date in
-            guard let date = date else {
-                self.logTextView.insertText("\n\nDCB FLOW FINISHED WITHOUT EXPIRATION TIME")
-                return
+        dcbCompletion = { date in
+
+            if let _ = DCBUserManager.dcbUser {
+                self.logTextView.insertText("\n● User Docomo Digital \n")
+
+                if let date = date {
+                    self.logTextView.insertText("\n● DCB FLOW FINISHED WITHOUT EXPIRATION TIME WITH DATE: \(date) \n")
+                } else {
+                    self.logTextView.insertText("\n● User expired, not subscribed. User must pay again to access the product \n")
+                }
+            } else {
+                self.logTextView.insertText("\n● Normal user discover the app from AppStore \n")
             }
-            self.logTextView.insertText("DCB FLOW FINISHED WITHOUT EXPIRATION TIME WITH DATE: \(date)")
         }
     }
 
