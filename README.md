@@ -64,7 +64,7 @@ let client = DCBApiClient(baseDomain:"<FINGERPRINT_DOMAIN>",
                           country: "<YOUR_COUNTRY>",
                           namespace: "<YOUR_NAMESPACE>")
 
-DCBUserManager(client: client).check(isActive: false) { date in
+DCBUserManager(client: client).checkFlowDCB(isActive: false) { date in
     if let dcbUser = DCBUserManager.dcbUser {
         //User is recognised as Docomo Acquisition​​
 ​
