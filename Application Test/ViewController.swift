@@ -12,6 +12,14 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var logTextView: UITextView!
+    @IBOutlet var resetButtonItem: UIBarButtonItem!
+
+    @IBAction func resetAction(_: Any) {
+        reset()
+        logTextView.text = nil
+        logTextView.insertText("DCB Account Reset\n")
+    }
+
     internal var dcbCompletion: DCBUserManagerCheckCompletion?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +40,14 @@ extension Notification.Name {
 }
 
 extension ViewController {
+    private func reset() {
+        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+        NSUbiquitousKeyValueStore.default.dictionaryRepresentation.forEach { key, value in
+            print("NSUbiquitousKeyValueStore -> key is :\(key) and value is \(value)")
+            NSUbiquitousKeyValueStore.default.removeObject(forKey: key)
+        }
+    }
+
     func setupLogging() {
         NotificationCenter.default.addObserver(self, selector: #selector(loggingData(_:)), name: .dcbLogging, object: nil)
 

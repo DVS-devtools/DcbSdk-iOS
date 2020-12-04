@@ -11,15 +11,14 @@ import Foundation
 
 struct Credential {
     static let dcbClient: DCBApiClient = {
-        let fingerPrintDomain = URL(string: "http://www.kidzinmind.com")!
-        let baseDomain = URL(string: "http://www.kidzinmind.com")!
+        let domain = URL(string: "http://acq.kidjo.tv")!
 
-        return DCBApiClient(baseDomain: fingerPrintDomain,
-                            confInfoDomain: baseDomain,
+        return DCBApiClient(baseDomain: domain,
+                            confInfoDomain: domain,
                             apikey: "556a42415047494483",
-                            catalog: "ww-kidzinmind",
-                            country: "ww",
-                            namespace: "news")
+                            catalog: "fr-kidjoadv",
+                            country: "fr",
+                            namespace: "external")
     }()
 
     static let logging = true
