@@ -12,7 +12,7 @@ After the integration of the sdk the resultant app can check if the user coming 
 
 ## Requirements
 - iOS Deployment Target: 9.0
-- Swift 5.1.3
+- Swift 5.2.4(only)
 
 ## Clone and Try it
 
@@ -58,13 +58,13 @@ Please make sure the two frameworks are linked as seen in the image.
 To use Direct Carrier Billing by Digital Virgo, use the following code.
 ```swift
 let client = DCBApiClient(baseDomain:"<FINGERPRINT_DOMAIN>",
-                          confInfoDomain: "<BASIC_DOMAIN>",
+                          confInfoDomain: "<SERVICE_DOMAIN>",
                           apikey: "<YOUR_APIKEY>",
                           catalog: "<YOUR_CATALOG>",
                           country: "<YOUR_COUNTRY>",
                           namespace: "<YOUR_NAMESPACE>")
 
-DCBUserManager(client: client).check(isActive: false) { date in
+DCBUserManager(client: client).checkFlowDCB(isActive: false) { date in
     if let dcbUser = DCBUserManager.dcbUser {
         //User is recognised as Digital Virgo Acquisition​​
 ​
