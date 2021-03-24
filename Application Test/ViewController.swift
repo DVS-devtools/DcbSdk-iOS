@@ -56,10 +56,10 @@ extension ViewController {
         dcbCompletion = { date in
 
             if let _ = DCBUserManager.dcbUser {
-                self.logTextView.insertText("\n● User Docomo Digital \n")
+                self.logTextView.insertText("\n● User Digital Virgo \n")
 
                 if let date = date {
-                    self.logTextView.insertText("\n● DCB FLOW FINISHED WITHOUT EXPIRATION TIME WITH DATE: \(date) \n")
+                    self.logTextView.insertText("\n● DCB FLOW FINISHED WITH EXPIRATION TIME WITH DATE: \(date) \n")
                 } else {
                     self.logTextView.insertText("\n● User expired, not subscribed. User must pay again to access the product \n")
                 }
@@ -71,7 +71,7 @@ extension ViewController {
 
     @objc func loggingData(_ notification: Notification) {
         guard let userInfo = notification.userInfo,
-            let message = userInfo["message"] as? String
+              let message = userInfo["message"] as? String
         else { return }
 
         DispatchQueue.main.async {
