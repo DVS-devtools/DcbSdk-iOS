@@ -1,2 +1,2 @@
-binary "https://dvs-devtools.github.io/DcbSdk/ios/carthage-dcbapi-ios-sdk.json" "3.8.5"
-binary "https://dvs-devtools.github.io/DcbSdk/ios/carthage-newton-ios-sdk.json" "4.1.0"
+binary "https://dvs-devtools.github.io/DcbSdk/ios/carthage-dcbapi-ios-sdk.json" "3.8.7"
+binary "https://dvs-devtools.github.io/DcbSdk/ios/carthage-newton-ios-sdk.json" "4.1.1"
