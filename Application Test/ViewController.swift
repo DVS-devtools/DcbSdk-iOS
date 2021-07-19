@@ -26,6 +26,8 @@ class ViewController: UIViewController {
 
         setupLogging()
 
+        setupQATrack()
+
         guard let dcbCompletion = dcbCompletion else {
             print("the callback is nil. Please, assign it")
             return
@@ -66,7 +68,15 @@ extension ViewController {
             } else {
                 self.logTextView.insertText("\n● Normal user discover the app from AppStore \n")
             }
+
+            self.logTextView.insertText("\n\n●Track String: \(UserDefaults.standard.string(forKey: "qa.trackString") ?? "")\n\n")
         }
+    }
+
+    func setupQATrack() {
+        UserDefaults.standard.set(true, forKey: "qa.enable")
+        UserDefaults.standard.set(true, forKey: "qa.trackIsEnable")
+        UserDefaults.standard.set("com.digitalvirgo.dcbexternaltestapp", forKey: "qa.trackString")
     }
 
     @objc func loggingData(_ notification: Notification) {
