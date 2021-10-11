@@ -1,6 +1,6 @@
 
 # Direct Carrier Billing by Digital Virgo
-![Swift Version](https://img.shields.io/badge/Swift-5.4.0-F16D39.svg?style=flat)
+![Swift Version](https://img.shields.io/badge/Swift-5.5-F16D39.svg?style=flat)
 ![Platform](https://img.shields.io/badge/Platform-iOS-green.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
@@ -12,7 +12,7 @@ After the integration of the sdk the resultant app can check if the user coming 
 
 ## Requirements
 - iOS Deployment Target: 9.0
-- Swift 5.4.0(only)
+- Swift 5.5(only)
 
 ## Clone and Try it
 
