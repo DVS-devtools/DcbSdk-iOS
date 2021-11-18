@@ -91,7 +91,7 @@ let client = DCBApiClient(baseDomain:"<FINGERPRINT_DOMAIN>",
                           namespace: "<YOUR_NAMESPACE>")
 
 DCBUserManager(client: client).checkFlowUserRecognition() { date, errorMessage in
-​       if let date = date {
+​   if let date = date {
 ​           //User is subscribed​
 ​       } else {
 ​           //User expired, not subscribed​​
