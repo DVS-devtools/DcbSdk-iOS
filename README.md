@@ -90,7 +90,7 @@ let client = DCBApiClient(baseDomain:"<FINGERPRINT_DOMAIN>",
                           country: "<YOUR_COUNTRY>",
                           namespace: "<YOUR_NAMESPACE>")
 
-DCBUserManager(client: client).checkFlowUserRecognition() { date, errorMessage in
+DCBUserManager(client: client).checkFlowUserRecognition() { date in
 ​       if let date = date {
 ​           //User is subscribed​
 ​       } else {
@@ -98,9 +98,6 @@ DCBUserManager(client: client).checkFlowUserRecognition() { date, errorMessage i
 ​           //user must pay again to access the product​​
 ​       }
 ​   } else {
-​       if let error = errorMessage {
-​         print(error)
-​       }
 ​       //Normal user discover the app from AppStore​
 ​   }
 }
