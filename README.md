@@ -54,8 +54,8 @@ $(SRCROOT)/Carthage/Build/iOS/DCBApiExt.framework
 ```
 Please make sure the two frameworks are linked as seen in the image.
 
-## If Aquisition process is hosted completely by Digital Virgo 
-To use Direct Carrier Billing when all acquisition flow is managed by Digital Virgo use the following code:
+## Example
+To use Direct Carrier Billing by Digital Virgo, use the following code.
 ```swift
 let client = DCBApiClient(baseDomain:"<FINGERPRINT_DOMAIN>",
                           confInfoDomain: "<SERVICE_DOMAIN>",
@@ -68,29 +68,6 @@ DCBUserManager(client: client).checkFlowDCB(isActive: false) { date, error in
     if let dcbUser = DCBUserManager.dcbUser {
         //User is recognised as Digital Virgo Acquisition​​
 ​
-​       if let date = date {
-​           //User is subscribed​
-​       } else {
-​           //User expired, not subscribed​​
-​           //user must pay again to access the product​​
-​       }
-​   } else {
-​       //Normal user discover the app from AppStore​
-​   }
-}
-```
-## If Aquisition is done by a third party and managed by Newton
-To use Direct Carrier Billing when there is only a "Newton" managed subscription, use the following code:
-
-```swift
-let client = DCBApiClient(baseDomain:"<FINGERPRINT_DOMAIN>",
-                          confInfoDomain: "<SERVICE_DOMAIN>",
-                          apikey: "<YOUR_APIKEY>",
-                          catalog: "<YOUR_CATALOG>",
-                          country: "<YOUR_COUNTRY>",
-                          namespace: "<YOUR_NAMESPACE>")
-
-DCBUserManager(client: client).checkFlowUserRecognition() { date in
 ​       if let date = date {
 ​           //User is subscribed​
 ​       } else {
