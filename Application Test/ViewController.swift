@@ -53,7 +53,7 @@ extension ViewController {
 
         logTextView.insertText("DCB FLOW\n")
 
-        dcbCompletion = { date in
+        dcbCompletion = { date, _ in
 
             if let _ = DCBUserManager.dcbUser {
                 self.logTextView.insertText("\n● User Digital Virgo \n")
