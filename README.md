@@ -57,8 +57,8 @@ Please make sure the two frameworks are linked as seen in the image.
 ## Example
 To use Direct Carrier Billing by Digital Virgo, use the following code.
 ```swift
-let client = DCBApiClient(baseDomain:"<FINGERPRINT_DOMAIN>",
-                          confInfoDomain: "<SERVICE_DOMAIN>",
+let client = DCBApiClient(baseDomain: URL(string:"<FINGERPRINT_DOMAIN>")!,
+                          confInfoDomain: URL(string:"<SERVICE_DOMAIN>")!,
                           apikey: "<YOUR_APIKEY>",
                           catalog: "<YOUR_CATALOG>",
                           country: "<YOUR_COUNTRY>",
