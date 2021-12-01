@@ -12,7 +12,7 @@ After the integration of the sdk the resultant app can check if the user coming 
 
 ## Requirements
 - iOS Deployment Target: 9.0
-- Swift 5.5(only)
+- Swift 5.5.1
 
 ## Clone and Try it
 
