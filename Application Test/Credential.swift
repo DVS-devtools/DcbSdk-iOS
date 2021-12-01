@@ -11,6 +11,18 @@ import Foundation
 
 struct Credential {
     static let dcbClient: DCBApiClient = {
+        let domain = URL(string: "https://acq.fan-live.com")!
+
+        return DCBApiClient(baseDomain: domain,
+                            confInfoDomain: domain,
+                            apikey: "556a42415047494483",
+                            catalog: "fr-fanlive",
+                            country: "fr",
+                            namespace: "external")
+
+    }()
+    
+    static let dcbClientKidjo: DCBApiClient = {
         let domain = URL(string: "http://acq.kidjo.tv")!
 
         return DCBApiClient(baseDomain: domain,
@@ -19,6 +31,19 @@ struct Credential {
                             catalog: "fr-kidjoadv",
                             country: "fr",
                             namespace: "external")
+
+    }()
+    
+    static let dcbClientKidjoStories: DCBApiClient = {
+        let domain = URL(string: "https://kidjo-stories.kidjo.tv")!
+
+        return DCBApiClient(baseDomain: domain,
+                            confInfoDomain: domain,
+                            apikey: "556a42415047494483",
+                            catalog: "fr-kidjoadv",
+                            country: "fr",
+                            namespace: "external")
+
     }()
 
     static let logging = true
