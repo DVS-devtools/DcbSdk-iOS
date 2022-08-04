@@ -25,6 +25,10 @@ class ViewController: UIViewController {
     
     @IBAction func startTestAction(_ sender: Any) {
         logTextView.insertText("DCB Options are:\nstaging Environment: \(dcbOptions.toggleQA), country: \(dcbOptions.country), mccmnc: \(dcbOptions.mccmnc)\n")
+        let defaults = UserDefaults.standard
+        defaults.set(dcbOptions.toggleQA, forKey: "qa.trackIsEnable")
+        defaults.set(dcbOptions.mccmnc, forKey: "dcb.fakeMCCMNC")
+        defaults.set(dcbOptions.country, forKey: "dcb.fakeCountry")
         
         guard let dcbCompletion = dcbCompletion else {
             print("the callback is nil. Please, assign it")
