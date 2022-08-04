@@ -69,7 +69,7 @@
                     <navigationItem key="navigationItem" title="DCB Ext App" id="GdM-tZ-cur">
                         <barButtonItem key="rightBarButtonItem" title="Options" image="gearshape.fill" catalog="system" id="fHg-6x-UIL" userLabel="Options Button Item">
                             <connections>
-                                <segue destination="ljP-6S-VOJ" kind="presentation" id="iuo-pi-4GG"/>
+                                <action selector="showOptionsPanel:" destination="BYZ-38-t0r" id="g1M-gm-6qR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -81,14 +81,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1812" y="-115"/>
-        </scene>
-        <!--DCB Options-->
-        <scene sceneID="Ttp-0b-5zL">
-            <objects>
-                <hostingController title="DCB Options" id="ljP-6S-VOJ" customClass="DCBOptionsHostingController" customModule="Application_for_DCB" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BAb-1E-4Ro" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1039" y="-115"/>
         </scene>
     </scenes>
     <resources>

@@ -9,12 +9,23 @@
 import DCBApiExt
 import Newton
 import UIKit
+import SwiftUI
 
 class ViewController: UIViewController {
+    var dcbOptions = DcbOptions()
+    
     @IBOutlet var logTextView: UITextView!
     @IBOutlet var resetButtonItem: UIBarButtonItem!
-
+    
+    @IBAction func showOptionsPanel(_ sender: Any) {
+        let optionsPanel = DCBOptionsView().environmentObject(dcbOptions)
+        let controller = UIHostingController(rootView: optionsPanel)
+                self.present(controller, animated: true)
+    }
+    
     @IBAction func startTestAction(_ sender: Any) {
+        logTextView.insertText("DCB Options are:\nstaging Environment: \(dcbOptions.toggleQA), country: \(dcbOptions.country), mccmnc: \(dcbOptions.mccmnc)\n")
+        
         guard let dcbCompletion = dcbCompletion else {
             print("the callback is nil. Please, assign it")
             return
@@ -35,6 +46,7 @@ class ViewController: UIViewController {
         logTextView.text = nil
         logTextView.insertText("DCB Account Reset\n")
     }
+    
 }
 
 

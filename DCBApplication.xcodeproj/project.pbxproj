@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		511BDAFC24337343005F1BE5 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511BDAFB24337343005F1BE5 /* Credential.swift */; };
-		5192A234247BDA04000A25BE /* DCBApiExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5192A232247BDA04000A25BE /* DCBApiExt.framework */; };
-		5192A236247BDA04000A25BE /* Newton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5192A233247BDA04000A25BE /* Newton.framework */; };
 		5192A23A247BF56A000A25BE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5192A239247BF56A000A25BE /* Default-568h@2x.png */; };
 		519BC42B241FB563009658BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519BC42A241FB563009658BD /* AppDelegate.swift */; };
 		519BC42D241FB563009658BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519BC42C241FB563009658BD /* SceneDelegate.swift */; };
@@ -17,9 +15,28 @@
 		519BC432241FB563009658BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 519BC430241FB563009658BD /* Main.storyboard */; };
 		519BC434241FB567009658BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 519BC433241FB567009658BD /* Assets.xcassets */; };
 		519BC437241FB567009658BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 519BC435241FB567009658BD /* LaunchScreen.storyboard */; };
-		9C2A4836289C05EF00A5B861 /* DCBOptionsHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2A4835289C05EF00A5B861 /* DCBOptionsHostingController.swift */; };
 		9C2A4838289C0A0A00A5B861 /* DCBOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2A4837289C0A0A00A5B861 /* DCBOptionsView.swift */; };
+		9C2A483A289C112400A5B861 /* DCBApiExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5192A232247BDA04000A25BE /* DCBApiExt.framework */; };
+		9C2A483B289C112400A5B861 /* DCBApiExt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5192A232247BDA04000A25BE /* DCBApiExt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9C2A483D289C114300A5B861 /* Newton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5192A233247BDA04000A25BE /* Newton.framework */; };
+		9C2A483E289C114300A5B861 /* Newton.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5192A233247BDA04000A25BE /* Newton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9C2A4840289C13CA00A5B861 /* DcbOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2A483F289C13CA00A5B861 /* DcbOptions.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9C2A483C289C112400A5B861 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9C2A483B289C112400A5B861 /* DCBApiExt.framework in Embed Frameworks */,
+				9C2A483E289C114300A5B861 /* Newton.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		511BDAFB24337343005F1BE5 /* Credential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
@@ -35,8 +52,8 @@
 		519BC436241FB567009658BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		519BC438241FB567009658BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51E654B4260B2EBA008CA3CE /* Application for DCB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Application for DCB.entitlements"; sourceTree = "<group>"; };
-		9C2A4835289C05EF00A5B861 /* DCBOptionsHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCBOptionsHostingController.swift; sourceTree = "<group>"; };
 		9C2A4837289C0A0A00A5B861 /* DCBOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCBOptionsView.swift; sourceTree = "<group>"; };
+		9C2A483F289C13CA00A5B861 /* DcbOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DcbOptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,8 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5192A234247BDA04000A25BE /* DCBApiExt.framework in Frameworks */,
-				5192A236247BDA04000A25BE /* Newton.framework in Frameworks */,
+				9C2A483A289C112400A5B861 /* DCBApiExt.framework in Frameworks */,
+				9C2A483D289C114300A5B861 /* Newton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +76,7 @@
 				511BDAFB24337343005F1BE5 /* Credential.swift */,
 				519BC42C241FB563009658BD /* SceneDelegate.swift */,
 				519BC42E241FB563009658BD /* ViewController.swift */,
-				9C2A4835289C05EF00A5B861 /* DCBOptionsHostingController.swift */,
+				9C2A483F289C13CA00A5B861 /* DcbOptions.swift */,
 				9C2A4837289C0A0A00A5B861 /* DCBOptionsView.swift */,
 				519BC430241FB563009658BD /* Main.storyboard */,
 				519BC433241FB567009658BD /* Assets.xcassets */,
@@ -108,6 +125,7 @@
 				519BC425241FB563009658BD /* Frameworks */,
 				519BC426241FB563009658BD /* Resources */,
 				5192A23B247BF64B000A25BE /* SwiftFormat */,
+				9C2A483C289C112400A5B861 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,10 +213,10 @@
 			files = (
 				519BC42F241FB563009658BD /* ViewController.swift in Sources */,
 				9C2A4838289C0A0A00A5B861 /* DCBOptionsView.swift in Sources */,
+				9C2A4840289C13CA00A5B861 /* DcbOptions.swift in Sources */,
 				519BC42B241FB563009658BD /* AppDelegate.swift in Sources */,
 				511BDAFC24337343005F1BE5 /* Credential.swift in Sources */,
 				519BC42D241FB563009658BD /* SceneDelegate.swift in Sources */,
-				9C2A4836289C05EF00A5B861 /* DCBOptionsHostingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

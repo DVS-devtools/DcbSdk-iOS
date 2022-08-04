@@ -9,21 +9,19 @@
 import SwiftUI
 
 struct DCBOptionsView: View {
-    @State private var toggleQA = false
-    @State private var country = ""
-    @State private var mccmnc = ""
+    @EnvironmentObject var dcbOptions: DcbOptions
     
     var body: some View {
         VStack (alignment: .leading){
             Text("DCB Options").font(.largeTitle)
-            Toggle("Toggle qa environment", isOn: $toggleQA)
+            Toggle("Toggle qa environment", isOn: $dcbOptions.toggleQA)
             HStack{
                 Text("Set Country:")
-                TextField("Country code", text: $country)
+                TextField("Country code", text: $dcbOptions.country)
             }
             HStack{
                 Text("Fake MCCMNC:")
-                TextField("MCCMNC", text: $mccmnc)
+                TextField("MCCMNC", text: $dcbOptions.mccmnc)
             }
         }.padding()
     }
