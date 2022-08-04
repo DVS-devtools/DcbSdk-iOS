@@ -14,24 +14,26 @@ class ViewController: UIViewController {
     @IBOutlet var logTextView: UITextView!
     @IBOutlet var resetButtonItem: UIBarButtonItem!
 
-    @IBAction func resetAction(_: Any) {
+    @IBAction func optionsAction(_: Any) {
         reset()
         logTextView.text = nil
         logTextView.insertText("DCB Account Reset\n")
     }
 
-    internal var dcbCompletion: DCBUserManagerCheckCompletion?
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setupLogging()
-
+    @IBAction func startTestAction(_ sender: Any) {
         guard let dcbCompletion = dcbCompletion else {
             print("the callback is nil. Please, assign it")
             return
         }
 
         DCBUserManager(client: Credential.dcbClient, loggingIsEnabled: Credential.logging).checkFlowDCB(isActive: false, completion: dcbCompletion)
+    }
+    
+    internal var dcbCompletion: DCBUserManagerCheckCompletion?
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setupLogging()
     }
 }
 

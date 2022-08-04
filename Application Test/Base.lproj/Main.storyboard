@@ -40,6 +40,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hqx-ye-MfR">
+                                <rect key="frame" x="80" y="813" width="267" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Start Test"/>
+                                <connections>
+                                    <action selector="startTestAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WeJ-WH-0pp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -58,9 +67,9 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="DCB Ext App" id="GdM-tZ-cur">
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="fHg-6x-UIL">
+                        <barButtonItem key="rightBarButtonItem" title="Options" image="gearshape.fill" catalog="system" id="fHg-6x-UIL" userLabel="Options Button Item">
                             <connections>
-                                <action selector="resetAction:" destination="BYZ-38-t0r" id="G7x-J1-NZp"/>
+                                <action selector="optionsAction:" destination="BYZ-38-t0r" id="6L8-HR-Sij"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -71,10 +80,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-32" y="-74"/>
+            <point key="canvasLocation" x="-33.333333333333336" y="-74.330357142857139"/>
         </scene>
     </scenes>
     <resources>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
