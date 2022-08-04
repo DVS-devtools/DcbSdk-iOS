@@ -23,7 +23,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dge-Kx-0UJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-994" y="-29"/>
+            <point key="canvasLocation" x="-2622" y="-72"/>
         </scene>
         <!--DCB for Ext App-->
         <scene sceneID="tne-QT-ifu">
@@ -69,7 +69,7 @@
                     <navigationItem key="navigationItem" title="DCB Ext App" id="GdM-tZ-cur">
                         <barButtonItem key="rightBarButtonItem" title="Options" image="gearshape.fill" catalog="system" id="fHg-6x-UIL" userLabel="Options Button Item">
                             <connections>
-                                <action selector="optionsAction:" destination="BYZ-38-t0r" id="6L8-HR-Sij"/>
+                                <segue destination="ljP-6S-VOJ" kind="presentation" id="iuo-pi-4GG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -80,7 +80,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-33.333333333333336" y="-74.330357142857139"/>
+            <point key="canvasLocation" x="-1812" y="-115"/>
+        </scene>
+        <!--DCB Options-->
+        <scene sceneID="Ttp-0b-5zL">
+            <objects>
+                <hostingController title="DCB Options" id="ljP-6S-VOJ" customClass="DCBOptionsHostingController" customModule="Application_for_DCB" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BAb-1E-4Ro" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1039" y="-115"/>
         </scene>
     </scenes>
     <resources>

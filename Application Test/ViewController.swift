@@ -14,12 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet var logTextView: UITextView!
     @IBOutlet var resetButtonItem: UIBarButtonItem!
 
-    @IBAction func optionsAction(_: Any) {
-        reset()
-        logTextView.text = nil
-        logTextView.insertText("DCB Account Reset\n")
-    }
-
     @IBAction func startTestAction(_ sender: Any) {
         guard let dcbCompletion = dcbCompletion else {
             print("the callback is nil. Please, assign it")
@@ -35,7 +29,15 @@ class ViewController: UIViewController {
 
         setupLogging()
     }
+    
+    func resetAction() {
+        reset()
+        logTextView.text = nil
+        logTextView.insertText("DCB Account Reset\n")
+    }
 }
+
+
 
 extension Notification.Name {
     static let dcbLogging = Notification.Name(rawValue: "DCBAPI_LOGGING")
