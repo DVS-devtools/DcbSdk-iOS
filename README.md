@@ -1,6 +1,6 @@
 
 # Direct Carrier Billing by Digital Virgo
-![Swift Version](https://img.shields.io/badge/Swift-5.3.2-F16D39.svg?style=flat)
+![Swift Version](https://img.shields.io/badge/Swift-5.6.1-F16D39.svg?style=flat)
 ![Platform](https://img.shields.io/badge/Platform-iOS-green.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
@@ -12,7 +12,7 @@ After the integration of the sdk the resultant app can check if the user coming 
 
 ## Requirements
 - iOS Deployment Target: 9.0
-- Swift 5.3.2(only)
+- Swift 5.6.1
 
 ## Clone and Try it
 
@@ -41,30 +41,28 @@ If you are only interested to download the framework for a specific platform run
 
 `carthage update --platform iOS`
 
-Then, you need to create a run script to support Carthage. Therefore, go to `Build Phases` of your Target and create a `New Run Script Phase`. 
-After this step, please copy information shown in the image below.
+Then, on your application targets’ General settings tab, in the Frameworks, Libraries, and Embedded Content section, 
+drag and drop each Framework you want to use from the Carthage/Build folder on disk.
 
 ![Carthage](./readme_resources/carthage.png)
 
-To speed up the process, simply copy the input files below
+To speed up the process, you may want to also copy each dependency into the build product (e.g., to embed dependencies within the outer framework). 
+To do this, create a new Copy Files build phase with the Frameworks destination, then add the framework reference there as well. 
+You shouldn't use the carthage copy-frameworks command since inner frameworks would be stripped, and running concurrent instances of copy-frameworks (with parallel builds turn on) is not supported.
 
-```
-$(SRCROOT)/Carthage/Build/iOS/Newton.framework
-$(SRCROOT)/Carthage/Build/iOS/DCBApiExt.framework
-```
 Please make sure the two frameworks are linked as seen in the image.
 
 ## Example
 To use Direct Carrier Billing by Digital Virgo, use the following code.
 ```swift
-let client = DCBApiClient(baseDomain:"<FINGERPRINT_DOMAIN>",
-                          confInfoDomain: "<SERVICE_DOMAIN>",
+let client = DCBApiClient(baseDomain: URL(string:"<FINGERPRINT_DOMAIN>")!,
+                          confInfoDomain: URL(string:"<SERVICE_DOMAIN>")!,
                           apikey: "<YOUR_APIKEY>",
                           catalog: "<YOUR_CATALOG>",
                           country: "<YOUR_COUNTRY>",
                           namespace: "<YOUR_NAMESPACE>")
 
-DCBUserManager(client: client).checkFlowDCB(isActive: false) { date in
+DCBUserManager(client: client).checkFlowDCB(isActive: false) { date, error in
     if let dcbUser = DCBUserManager.dcbUser {
         //User is recognised as Digital Virgo Acquisition​​
 ​

@@ -101,7 +101,6 @@
 				519BC424241FB563009658BD /* Sources */,
 				519BC425241FB563009658BD /* Frameworks */,
 				519BC426241FB563009658BD /* Resources */,
-				519BC43C241FB6F1009658BD /* carthage-copy */,
 				5192A23B247BF64B000A25BE /* SwiftFormat */,
 			);
 			buildRules = (
@@ -180,26 +179,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftformat >/dev/null; then\n    swiftformat . --swiftversion 5.3.2\nelse\n    echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
-		};
-		519BC43C241FB6F1009658BD /* carthage-copy */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Newton.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/DCBApiExt.framework",
-			);
-			name = "carthage-copy";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
