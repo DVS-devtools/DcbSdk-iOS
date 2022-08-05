@@ -17,6 +17,21 @@ class ViewController: UIViewController {
     @IBOutlet var logTextView: UITextView!
     @IBOutlet var resetButtonItem: UIBarButtonItem!
     
+    fileprivate func resetOptions() {
+        dcbOptions.country = ""
+        dcbOptions.mccmnc = ""
+        dcbOptions.toggleQA = false
+    }
+    
+    @IBAction func resetAction(_ sender: Any) {
+        reset()
+        
+        resetOptions()
+        
+        logTextView.text = nil
+        logTextView.insertText("DCB Account Reset\n")
+    }
+    
     @IBAction func showOptionsPanel(_ sender: Any) {
         let optionsPanel = DCBOptionsView().environmentObject(dcbOptions)
         let controller = UIHostingController(rootView: optionsPanel)
@@ -24,11 +39,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startTestAction(_ sender: Any) {
+        
         logTextView.insertText("DCB Options are:\nstaging Environment: \(dcbOptions.toggleQA), country: \(dcbOptions.country), mccmnc: \(dcbOptions.mccmnc)\n")
-        let defaults = UserDefaults.standard
-        defaults.set(dcbOptions.toggleQA, forKey: "qa.trackIsEnable")
-        defaults.set(dcbOptions.mccmnc, forKey: "dcb.fakeMCCMNC")
-        defaults.set(dcbOptions.country, forKey: "dcb.fakeCountry")
+        
+        saveOptionsToUserDefaults()
         
         guard let dcbCompletion = dcbCompletion else {
             print("the callback is nil. Please, assign it")
@@ -38,17 +52,18 @@ class ViewController: UIViewController {
         DCBUserManager(client: Credential.dcbClient, loggingIsEnabled: Credential.logging).checkFlowDCB(isActive: false, completion: dcbCompletion)
     }
     
+    fileprivate func saveOptionsToUserDefaults() {
+        let defaults = UserDefaults.standard
+        defaults.set(dcbOptions.toggleQA, forKey: "qa.trackIsEnable")
+        defaults.set(dcbOptions.mccmnc, forKey: "dcb.fakeMCCMNC")
+        defaults.set(dcbOptions.country, forKey: "dcb.fakeCountry")
+    }
+    
     internal var dcbCompletion: DCBUserManagerCheckCompletion?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupLogging()
-    }
-    
-    func resetAction() {
-        reset()
-        logTextView.text = nil
-        logTextView.insertText("DCB Account Reset\n")
     }
     
 }
@@ -63,8 +78,9 @@ extension ViewController {
     private func reset() {
         UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
         NSUbiquitousKeyValueStore.default.dictionaryRepresentation.forEach { key, value in
-            print("NSUbiquitousKeyValueStore -> key is :\(key) and value is \(value)")
+            logTextView.insertText("NSUbiquitousKeyValueStore -> key is :\(key) and value is \(value)\n")
             NSUbiquitousKeyValueStore.default.removeObject(forKey: key)
+            logTextView.insertText("UserDefaults reset completed")
         }
     }
 
@@ -88,6 +104,8 @@ extension ViewController {
             }
         }
     }
+    
+    
 
     @objc func loggingData(_ notification: Notification) {
         guard let userInfo = notification.userInfo,
