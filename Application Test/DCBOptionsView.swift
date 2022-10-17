@@ -23,6 +23,7 @@ struct DCBOptionsView: View {
                 Text("Fake MCCMNC:")
                 TextField("MCCMNC", text: $dcbOptions.mccmnc)
             }
+            Spacer()
         }.padding()
     }
 }

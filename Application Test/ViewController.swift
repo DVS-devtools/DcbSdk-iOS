@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     
     @IBAction func startTestAction(_ sender: Any) {
         
-        logTextView.insertText("DCB Options are:\nstaging Environment: \(dcbOptions.toggleQA), country: \(dcbOptions.country), mccmnc: \(dcbOptions.mccmnc)\n")
+        logTextView.insertText("DCB Options are:\nstaging Environment: \(dcbOptions.toggleQA), fake country: \(dcbOptions.country), fake mccmnc: \(dcbOptions.mccmnc)\n")
         
         saveOptionsToUserDefaults()
         
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
             return
         }
 
-        DCBUserManager(client: Credential.dcbClient, loggingIsEnabled: Credential.logging).checkFlowDCB(isActive: false, completion: dcbCompletion)
+        DCBUserManager(client: Credential.dcbClientKidjo, loggingIsEnabled: Credential.logging).checkFlowDCB(isActive: false, completion: dcbCompletion)
     }
     
     fileprivate func saveOptionsToUserDefaults() {

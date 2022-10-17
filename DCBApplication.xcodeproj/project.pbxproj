@@ -16,24 +16,33 @@
 		519BC434241FB567009658BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 519BC433241FB567009658BD /* Assets.xcassets */; };
 		519BC437241FB567009658BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 519BC435241FB567009658BD /* LaunchScreen.storyboard */; };
 		9C2A4838289C0A0A00A5B861 /* DCBOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2A4837289C0A0A00A5B861 /* DCBOptionsView.swift */; };
-		9C2A483A289C112400A5B861 /* DCBApiExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5192A232247BDA04000A25BE /* DCBApiExt.framework */; };
-		9C2A483B289C112400A5B861 /* DCBApiExt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5192A232247BDA04000A25BE /* DCBApiExt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9C2A483D289C114300A5B861 /* Newton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5192A233247BDA04000A25BE /* Newton.framework */; };
-		9C2A483E289C114300A5B861 /* Newton.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5192A233247BDA04000A25BE /* Newton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9C2A4840289C13CA00A5B861 /* DcbOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2A483F289C13CA00A5B861 /* DcbOptions.swift */; };
+		9C4DF00028C20D7000311345 /* DCBApiExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5192A232247BDA04000A25BE /* DCBApiExt.framework */; };
+		9C87884A28C7E43400F2649B /* Newton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5192A233247BDA04000A25BE /* Newton.framework */; };
+		9C87885028C7E60A00F2649B /* DCBApiExt.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9C87884F28C7E60A00F2649B /* DCBApiExt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9C87885228C7E61200F2649B /* Newton.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9C87885128C7E61200F2649B /* Newton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		9C2A483C289C112400A5B861 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C87884E28C7E5D100F2649B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9C2A483B289C112400A5B861 /* DCBApiExt.framework in Embed Frameworks */,
-				9C2A483E289C114300A5B861 /* Newton.framework in Embed Frameworks */,
+				9C87885028C7E60A00F2649B /* DCBApiExt.framework in CopyFiles */,
+				9C87885228C7E61200F2649B /* Newton.framework in CopyFiles */,
 			);
-			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -54,6 +63,13 @@
 		51E654B4260B2EBA008CA3CE /* Application for DCB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Application for DCB.entitlements"; sourceTree = "<group>"; };
 		9C2A4837289C0A0A00A5B861 /* DCBOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCBOptionsView.swift; sourceTree = "<group>"; };
 		9C2A483F289C13CA00A5B861 /* DcbOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DcbOptions.swift; sourceTree = "<group>"; };
+		9C2A484B28B396A700A5B861 /* DCBApiExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DCBApiExt.framework; path = Carthage/Build/iOS/DCBApiExt.framework; sourceTree = "<group>"; };
+		9C2A484E28B396FD00A5B861 /* DCBApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DCBApi.framework; path = Carthage/Build/iOS/DCBApiExt.framework/Frameworks/DCBApi.framework; sourceTree = "<group>"; };
+		9C4DF00228C20DBE00311345 /* DCBApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DCBApi.framework; path = Carthage/Build/iOS/DCBApiExt.framework/Frameworks/DCBApi.framework; sourceTree = "<group>"; };
+		9C87884428C7B01C00F2649B /* Newton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Newton.framework; path = Carthage/Build/iOS/Newton.framework; sourceTree = "<group>"; };
+		9C87884828C7B37900F2649B /* DCBApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DCBApi.framework; path = Carthage/Build/iOS/DCBApiExt.framework/Frameworks/DCBApi.framework; sourceTree = "<group>"; };
+		9C87884F28C7E60A00F2649B /* DCBApiExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DCBApiExt.framework; path = Carthage/Build/iOS/DCBApiExt.framework; sourceTree = "<group>"; };
+		9C87885128C7E61200F2649B /* Newton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Newton.framework; path = Carthage/Build/iOS/Newton.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C2A483A289C112400A5B861 /* DCBApiExt.framework in Frameworks */,
-				9C2A483D289C114300A5B861 /* Newton.framework in Frameworks */,
+				9C4DF00028C20D7000311345 /* DCBApiExt.framework in Frameworks */,
+				9C87884A28C7E43400F2649B /* Newton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +106,7 @@
 		8B3382EE1F90992500478B06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9C2A484E28B396FD00A5B861 /* DCBApi.framework */,
 				5192A232247BDA04000A25BE /* DCBApiExt.framework */,
 				5192A233247BDA04000A25BE /* Newton.framework */,
 			);
@@ -99,6 +116,12 @@
 		8B5BEA901F0CFC8800CF5209 = {
 			isa = PBXGroup;
 			children = (
+				9C87885128C7E61200F2649B /* Newton.framework */,
+				9C87884F28C7E60A00F2649B /* DCBApiExt.framework */,
+				9C87884828C7B37900F2649B /* DCBApi.framework */,
+				9C87884428C7B01C00F2649B /* Newton.framework */,
+				9C4DF00228C20DBE00311345 /* DCBApi.framework */,
+				9C2A484B28B396A700A5B861 /* DCBApiExt.framework */,
 				51E654B4260B2EBA008CA3CE /* Application for DCB.entitlements */,
 				519BC429241FB563009658BD /* Application Test */,
 				8B3382EE1F90992500478B06 /* Frameworks */,
@@ -126,6 +149,7 @@
 				519BC426241FB563009658BD /* Resources */,
 				5192A23B247BF64B000A25BE /* SwiftFormat */,
 				9C2A483C289C112400A5B861 /* Embed Frameworks */,
+				9C87884E28C7E5D100F2649B /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -255,11 +279,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/DCBApiExt.framework/Frameworks",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Application Test/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.digitalvirgo.dcbexternaltestapp;
@@ -282,11 +308,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/DCBApiExt.framework/Frameworks",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Application Test/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.digitalvirgo.dcbexternaltestapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
